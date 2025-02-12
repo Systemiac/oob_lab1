@@ -24,13 +24,13 @@ public abstract class CarTransport extends Truck {
     }
 
     public void raiseCargoBed() {
-        if (isStandStill() && cargoBedAngle == minAngle) {
+        if (isStandingStill() && cargoBedAngle == minAngle) {
             cargoBedAngle = maxAngle;
         }
     }
 
     public void lowerCargoBed() {
-        if (isStandStill() && cargoBedAngle == maxAngle) {
+        if (isStandingStill() && cargoBedAngle == maxAngle) {
             cargoBedAngle = minAngle;
         }
     }
@@ -61,7 +61,7 @@ public abstract class CarTransport extends Truck {
         } else if (loadedCars.isEmpty()) {
             System.out.println("CarTransporter is empty");
             return null;
-        } else if (!(isStandStill())) {
+        } else if (!(isStandingStill())) {
             System.out.println("Can not unload car while moving");
             return null;
         } else {

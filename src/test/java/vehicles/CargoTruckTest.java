@@ -52,9 +52,9 @@ public class CargoTruckTest {
 
     @Test
     void cargoChecker() {
-        assertTrue(truckPrototype.isStandStill());
+        assertTrue(truckPrototype.isStandingStill());
         truckPrototype.startEngine();
         truckPrototype.gas(0.1);
-        assertFalse(truckPrototype.isStandStill());
+        assertFalse(truckPrototype.isStandingStill());
     }
 }

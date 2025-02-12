@@ -13,7 +13,7 @@ abstract class Truck extends VehiclePrototype implements CargoBed {
     
     }
 
-    protected boolean isStandStill() {
+    protected boolean isStandingStill() {
         if (getCurrentSpeed() == 0) {
             return true;
         } else {
