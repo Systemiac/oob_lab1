@@ -32,7 +32,8 @@ public class Main {
         Mercedes mercedes = new Mercedes();
         mercedes.raiseCargoBed();
         mercedes.loadCar(volvo_4);
-        System.out.println(mercedes.getCarAmount());
+        Car cartest=mercedes.unloadCar();
+        System.out.println(cartest.toString());
 
 
     }

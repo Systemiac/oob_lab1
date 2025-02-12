@@ -13,7 +13,7 @@ public abstract class CargoTruck extends Truck {
             System.err.println("Error: Cannot lower cargo bed with a negative value.");
             return;
         } 
-        if (cargoChecker()) {
+        if (isStandStill()) {
             cargoBedAngle -= degree;
             if(cargoBedAngle<minAngle){
                 cargoBedAngle=minAngle;
@@ -26,7 +26,7 @@ public abstract class CargoTruck extends Truck {
             System.err.println("Error: Cannot raise cargo bed with a negative value.");
             return;
         }
-        if (cargoChecker() && degree > 0) {
+        if (isStandStill() && degree > 0) {
             cargoBedAngle += degree;
             if(cargoBedAngle > maxAngle){
                 cargoBedAngle = maxAngle;

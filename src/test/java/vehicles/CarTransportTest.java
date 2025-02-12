@@ -22,40 +22,42 @@ public class CarTransportTest {
         testCar2 = new Saab95();
     }
 
-    @Test 
-    public void testMove(){
-           cTransport.loadCar(testCar1);
-           cTransport.loadCar(testCar2);
-           cTransport.move();
-           
-           assertEquals(cTransport.getPosY(), testCar1.getPosY());
-           assertEquals(cTransport.getPosX(), testCar1.getPosX());
-           assertEquals(cTransport.getPosX(), testCar2.getPosX());
-           assertEquals(cTransport.getPosY(), testCar2.getPosY());
+    @Test
+    public void testMove() {
+        cTransport.raiseCargoBed();
+        cTransport.loadCar(testCar1);
+        cTransport.loadCar(testCar2);
+        cTransport.lowerCargoBed();
+        cTransport.startEngine();
+        cTransport.move();
+
+        assertEquals(cTransport.getPosY(), testCar1.getPosY());
+        assertEquals(cTransport.getPosX(), testCar1.getPosX());
+        assertEquals(cTransport.getPosX(), testCar2.getPosX());
+        assertEquals(cTransport.getPosY(), testCar2.getPosY());
     }
 
-    @Test 
-    public void testRaiseCargoBed(){
+    @Test
+    public void testRaiseCargoBed() {
         cTransport.lowerCargoBed();
         cTransport.raiseCargoBed();
         assertEquals(70, cTransport.getCargoBedAngle());
     }
 
-    @Test 
-    public void testLowerCargoBed(){
+    @Test
+    public void testLowerCargoBed() {
         cTransport.raiseCargoBed();
         cTransport.lowerCargoBed();
-        assertEquals(0,cTransport.getCargoBedAngle());
+        assertEquals(0, cTransport.getCargoBedAngle());
     }
 
-    
-    @Test 
-    public void testLoadCarTransport(){
+    @Test
+    public void testLoadCarTransport() {
         cTransport.raiseCargoBed();
-        assertEquals(0,cTransport.getCarAmount());
+        assertEquals(0, cTransport.getCarAmount());
         cTransport.loadCar(testCar1);
-        assertEquals(1,cTransport.getCarAmount());
-        
+        assertEquals(1, cTransport.getCarAmount());
+
     }
 
     @Test
@@ -64,10 +66,10 @@ public class CarTransportTest {
         cTransport.loadCar(testCar1);
         assertEquals(1, cTransport.getCarAmount());
         cTransport.unloadCar();
-        assertEquals(0,cTransport.getCarAmount());
+        assertEquals(0, cTransport.getCarAmount());
     }
 
-    @Test   
+    @Test
     public void testGetCarAmount() {
         assertEquals(0, cTransport.getCarAmount());
     }
