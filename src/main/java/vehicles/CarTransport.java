@@ -61,7 +61,7 @@ public abstract class CarTransport extends Truck {
         } else if (loadedCars.isEmpty()) {
             System.out.println("CarTransporter is empty");
             return null;
-        } else if (!(getCurrentSpeed() == 0)) {
+        } else if (!(isStandStill())) {
             System.out.println("Can not unload car while moving");
             return null;
         } else {
